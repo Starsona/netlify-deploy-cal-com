@@ -154,7 +154,6 @@ const querySchema = z.object({
 export default function Success(props: SuccessProps) {
   const { t } = useLocale();
   const router = useRouter();
-
   const {
     allRemainingBookings,
     isSuccessBookingPage,
@@ -232,6 +231,7 @@ export default function Success(props: SuccessProps) {
       eventType,
       date: date.toString(),
       duration: eventType.length,
+      bookingInfo: props.bookingInfo,
       organizer: {
         name: users[0].name || "Nameless",
         email: users[0].email || "Email-less",
@@ -655,8 +655,6 @@ export default function Success(props: SuccessProps) {
     </div>
   );
 }
-
-Success.isThemeSupported = true;
 
 type RecurringBookingsProps = {
   eventType: SuccessProps["eventType"];
