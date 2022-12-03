@@ -15,7 +15,7 @@
     "app-store:build": "yarn app-store-cli build",
     "app-store:watch": "yarn app-store-cli watch",
     "app-store": "yarn app-store-cli cli",
-    "build": "turbo run build --filter=@calcom/web...",
+    "build": "node --max-old-space-size=4096 turbo run build --filter=@calcom/web...",
     "clean": "find . -name node_modules -o -name .next -o -name .turbo -o -name dist -type d -prune | xargs rm -rf",
     "db-deploy": "turbo run db-deploy",
     "db-seed": "turbo run db-seed",
